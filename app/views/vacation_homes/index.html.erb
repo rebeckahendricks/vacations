@@ -1,0 +1,6 @@
+<h1>Vacation Homes</h1>
+
+<% @vacation_homes.each do |home| %>
+  <h3><a href="/vacation_homes/<%= home.id %>"><%= home.listing_name %></a></h3>
+  <p>Location: <%= home.location%></p>
+<% end %>

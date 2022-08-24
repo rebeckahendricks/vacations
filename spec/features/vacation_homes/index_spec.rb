@@ -1,0 +1,17 @@
+require 'rails_helper'
+
+RSpec.describe 'Vacation Homes index page' do
+  describe 'As a visitor' do
+    describe 'when I visit "/vacation_homes"' do
+      it 'I see the name of each vacation_homes record in the system' do
+        vacation_home1 = VacationHome.create!(listing_name: "Gorgeous home", location: "San Jose, Costa Rica", rating:4.9, verified:true, guest_capacity:6)
+        vacation_home2 = VacationHome.create!(listing_name: "Fabulous getaway", location: "Miami, FL", rating:5.0, verified:true, guest_capacity:10)
+
+        visit "/vacation_homes"
+
+        expect(page).to have_content(vacation_home1.listing_name)
+        expect(page).to have_content(vacation_home2.listing_name)
+      end
+    end
+  end
+end
