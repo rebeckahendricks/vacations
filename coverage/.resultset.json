@@ -244,6 +244,7 @@
           null,
           1,
           1,
+          1,
           null
         ]
       },
@@ -267,14 +268,26 @@
           null
         ]
       },
-      "/Users/rebeckahendricks/Turing/2mod/projects/vacations/app/models/booking.rb": {
+      "/Users/rebeckahendricks/Turing/2mod/projects/vacations/app/controllers/vacation_homes_controller.rb": {
         "lines": [
           1,
+          1,
+          0,
+          null,
+          null,
+          1,
+          7,
+          null,
+          null
+        ]
+      },
+      "/Users/rebeckahendricks/Turing/2mod/projects/vacations/app/controllers/application_controller.rb": {
+        "lines": [
           1,
           null
         ]
       }
     },
-    "timestamp": 1661380950
+    "timestamp": 1661382585
   }
 }
