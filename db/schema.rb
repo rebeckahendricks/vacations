@@ -10,10 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_24_203122) do
+ActiveRecord::Schema.define(version: 2022_08_24_204513) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookings", force: :cascade do |t|
+    t.date "checkin"
+    t.date "checkout"
+    t.string "guest_surname"
+    t.string "guest_firstname"
+    t.integer "guests"
+    t.boolean "verified"
+    t.bigint "vacation_homes_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["vacation_homes_id"], name: "index_bookings_on_vacation_homes_id"
+  end
 
   create_table "vacation_homes", force: :cascade do |t|
     t.string "listing_name"
@@ -25,4 +38,5 @@ ActiveRecord::Schema.define(version: 2022_08_24_203122) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "bookings", "vacation_homes", column: "vacation_homes_id"
 end
