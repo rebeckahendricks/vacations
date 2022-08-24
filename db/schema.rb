@@ -22,10 +22,10 @@ ActiveRecord::Schema.define(version: 2022_08_24_204513) do
     t.string "guest_firstname"
     t.integer "guests"
     t.boolean "verified"
-    t.bigint "vacation_homes_id"
+    t.bigint "vacation_home_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["vacation_homes_id"], name: "index_bookings_on_vacation_homes_id"
+    t.index ["vacation_home_id"], name: "index_bookings_on_vacation_home_id"
   end
 
   create_table "vacation_homes", force: :cascade do |t|
@@ -38,5 +38,5 @@ ActiveRecord::Schema.define(version: 2022_08_24_204513) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "bookings", "vacation_homes", column: "vacation_homes_id"
+  add_foreign_key "bookings", "vacation_homes"
 end
