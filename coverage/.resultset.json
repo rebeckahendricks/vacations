@@ -245,6 +245,8 @@
           1,
           1,
           1,
+          1,
+          null,
           null
         ]
       },
@@ -254,7 +256,99 @@
           null
         ]
       },
-      "/Users/rebeckahendricks/Turing/2mod/projects/vacations/app/models/vacation_home.rb": {
+      "/Users/rebeckahendricks/Turing/2mod/projects/vacations/spec/features/vacation_homes/index_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/rebeckahendricks/Turing/2mod/projects/vacations/spec/features/vacation_homes/show_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/rebeckahendricks/Turing/2mod/projects/vacations/spec/models/booking_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          2,
+          null
+        ]
+      },
+      "/Users/rebeckahendricks/Turing/2mod/projects/vacations/app/models/booking.rb": {
         "lines": [
           1,
           1,
@@ -268,15 +362,27 @@
           null
         ]
       },
-      "/Users/rebeckahendricks/Turing/2mod/projects/vacations/app/controllers/vacation_homes_controller.rb": {
+      "/Users/rebeckahendricks/Turing/2mod/projects/vacations/spec/models/vacation_home_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          2,
+          null
+        ]
+      },
+      "/Users/rebeckahendricks/Turing/2mod/projects/vacations/app/models/vacation_home.rb": {
         "lines": [
           1,
           1,
-          0,
-          null,
-          null,
+          null
+        ]
+      },
+      "/Users/rebeckahendricks/Turing/2mod/projects/vacations/app/controllers/bookings_controller.rb": {
+        "lines": [
           1,
-          7,
+          1,
+          1,
           null,
           null
         ]
@@ -286,8 +392,21 @@
           1,
           null
         ]
+      },
+      "/Users/rebeckahendricks/Turing/2mod/projects/vacations/app/controllers/vacation_homes_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          7,
+          null,
+          null
+        ]
       }
     },
-    "timestamp": 1661382585
+    "timestamp": 1661450079
   }
 }

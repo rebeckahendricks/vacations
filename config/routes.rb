@@ -3,4 +3,6 @@ Rails.application.routes.draw do
 get '/', to: 'welcome#index'
 get '/vacation_homes', to: 'vacation_homes#index'
 get '/vacation_homes/:id', to: 'vacation_homes#show'
+get '/bookings', to: 'bookings#index'
+
 end
