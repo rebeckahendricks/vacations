@@ -6,9 +6,7 @@ RSpec.describe 'Bookings index page' do
     @booking = @vacation_home.bookings.create!(checkin: "2022-01-21", checkout: "2022-01-24", guest_surname: "Hendricks", guest_firstname: "Rebecka", guests: 4, verified: true)
     @booking2 = @vacation_home.bookings.create!(checkin: "2022-01-25", checkout: "2022-01-29", guest_surname: "Whitehall", guest_firstname: "Corey", guests: 8, verified: true)
   end
-# As a visitor
-# When I visit any page on the site
-# Then I see a link at the top of the page that takes me to the Child Index
+
   describe 'as a visitor' do
     describe 'when I visit "/bookings"' do
       describe 'I see the all of the bookings in the system' do
