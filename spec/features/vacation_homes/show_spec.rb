@@ -32,6 +32,15 @@ RSpec.describe 'Vacation Homes show page' do
           expect(page).to have_content("Number of Bookings: 1")
         end
       end
+
+      describe 'I see a link to take me to that vacation homes bookings page' do
+        it 'has a link that goes to its bookings' do
+          visit "/vacation_homes/#{@vacation_home.id}"
+          expect(page).to have_link("View Bookings")
+          click_on "View Bookings"
+          expect(current_path).to eq("/vacation_homes/#{@vacation_home.id}/bookings")
+        end
+      end
     end
   end
 end

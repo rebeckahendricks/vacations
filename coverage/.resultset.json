@@ -264,7 +264,7 @@
           1,
           null,
           1,
-          1,
+          4,
           null,
           null
         ]
@@ -287,11 +287,11 @@
         "lines": [
           1,
           1,
-          8,
+          0,
           null,
           null,
           1,
-          1,
+          4,
           null,
           null
         ]
@@ -299,27 +299,6 @@
       "/Users/rebeckahendricks/Turing/2mod/projects/vacations/app/controllers/application_controller.rb": {
         "lines": [
           1,
-          null
-        ]
-      },
-      "/Users/rebeckahendricks/Turing/2mod/projects/vacations/app/controllers/welcome_controller.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          null
-        ]
-      },
-      "/Users/rebeckahendricks/Turing/2mod/projects/vacations/app/controllers/bookings_controller.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          null,
           null
         ]
       },
@@ -334,6 +313,6 @@
         ]
       }
     },
-    "timestamp": 1661530402
+    "timestamp": 1661531262
   }
 }
