@@ -5,7 +5,7 @@ RSpec.describe 'Vacation homes new page:' do
     it 'I see a form for new vacation homes record' do
       visit "/vacation_homes/new"
 
-       expect(page).to have_selector("input")
+      expect(page).to have_selector("input")
     end
   end
 
