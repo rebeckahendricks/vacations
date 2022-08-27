@@ -1,0 +1,26 @@
+<%= form_with url: "/bookings/#{@booking.id}", method: :patch, local: true do |form| %>
+  <%= form.label :checkin %>:
+  <%= form.date_field :checkin, value: @booking.checkin%><br>
+
+  <%= form.label :checkout %>:
+  <%= form.date_field :checkout, value: @booking.checkout %><br>
+
+  <%= form.label :guest_surname %>:
+  <%= form.text_field :guest_surname, value: @booking.guest_surname %><br>
+
+  <%= form.label :guest_firstname %>:
+  <%= form.text_field :guest_firstname %><br>
+
+  <%= form.label :guests %>:
+  <%= form.number_field :guests, in: 1..20, step: 1, value: @booking.guests %><br>
+
+  <%= form.label :verified %>:
+  <%= form.radio_button :verified, "true" %>
+  <%= form.label :verified_true, "Is verified" %>
+  <%= form.radio_button :verified, "false" %>
+  <%= form.label :verified_false, "Is not verified" %><br>
+
+  <%= form.hidden_field :vacation_home_id, value: "#{@booking.vacation_home_id}" %><br><br>
+
+  <%= form.submit 'Update Booking' %>
+<% end %>
