@@ -17,5 +17,6 @@
   <%= form.label :guest_capacity %>:
   <%= form.number_field :guest_capacity, in: 1..20, step: 1, value: @vacation_home.guest_capacity %><br><br>
 
+  <%= form.hidden_field :updated_at, value: Time.now %>
   <%= form.submit 'Update Vacation Home' %>
 <% end %>

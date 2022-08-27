@@ -19,6 +19,6 @@ class BookingsController < ApplicationController
 
   private
   def booking_params
-    params.permit(:checkin, :checkout, :guest_surname, :guest_firstname, :guests, :verified, :vacation_home_id)
+    params.permit(:checkin, :checkout, :guest_surname, :guest_firstname, :guests, :verified, :vacation_home_id, :updated_at)
   end
 end

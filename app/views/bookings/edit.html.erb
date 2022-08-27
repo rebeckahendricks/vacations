@@ -9,7 +9,7 @@
   <%= form.text_field :guest_surname, value: @booking.guest_surname %><br>
 
   <%= form.label :guest_firstname %>:
-  <%= form.text_field :guest_firstname %><br>
+  <%= form.text_field :guest_firstname, value: @booking.guest_firstname %><br>
 
   <%= form.label :guests %>:
   <%= form.number_field :guests, in: 1..20, step: 1, value: @booking.guests %><br>
@@ -21,6 +21,6 @@
   <%= form.label :verified_false, "Is not verified" %><br>
 
   <%= form.hidden_field :vacation_home_id, value: "#{@booking.vacation_home_id}" %><br><br>
-
+  <%= form.hidden_field :updated_at, value: Time.now %>
   <%= form.submit 'Update Booking' %>
 <% end %>
