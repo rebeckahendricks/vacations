@@ -62,5 +62,22 @@ RSpec.describe 'Vacation Homes index page' do
         end
       end
     end
+
+    describe 'when I visit the vacation home index page' do
+      describe 'I see a link to create a new vacation_home' do
+        it 'has a link called "New Vacation Home"' do
+          visit "/vacation_homes"
+
+          expect(page).to have_link("New Vacation Home")
+        end
+
+        it 'when I click this link I am taken to "/vacation_homes/new"' do
+          visit "/vacation_homes"
+          click_link "New Vacation Home"
+
+          expect(current_path).to eq("/vacation_homes/new")
+        end
+      end
+    end
   end
 end
