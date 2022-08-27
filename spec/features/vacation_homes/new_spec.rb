@@ -16,7 +16,7 @@ RSpec.describe 'Vacation homes new page:' do
         fill_in 'listing_name', with: 'Beautiful apartment'
         fill_in 'location', with: 'California'
         fill_in 'rating', with: '3.5'
-        choose 'true'
+        choose 'verified_true'
         fill_in 'guest_capacity', with: '5'
         click_on 'Create Vacation Home Listing'
 

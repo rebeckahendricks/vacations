@@ -12,4 +12,6 @@ get '/bookings', to: 'bookings#index'
 get '/bookings/:id', to: 'bookings#show'
 
 get '/vacation_homes/:id/bookings', to: 'vacation_homes_bookings#index'
+get 'vacation_homes/:id/bookings/new', to: 'vacation_homes_bookings#new'
+post 'vacation_homes/:id/bookings', to: 'vacation_homes_bookings#create'
 end
