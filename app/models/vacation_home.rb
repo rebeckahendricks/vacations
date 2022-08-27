@@ -4,4 +4,8 @@ class VacationHome < ApplicationRecord
   def bookings_count
     self.bookings.count
   end
+
+  def self.order_by_creation
+    self.order(created_at: :desc)
+  end
 end

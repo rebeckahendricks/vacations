@@ -1,0 +1,26 @@
+<a href="/vacation_homes">View all Vacation Homes</a>
+<a href="/bookings">View all Bookings</a><br>
+
+<h2>Create New Vacation Home Listing</h2>
+
+<%= form_with url: "/vacation_homes", method: :post, local: true do |form| %>
+  <%= form.label :listing_name %>:
+  <%= form.text_field :listing_name %><br>
+
+  <%= form.label :location %>:
+  <%= form.text_field :location %><br>
+
+  <%= form.label :rating %>:
+  <%= form.number_field :rating, in: 1.0..5.0, step: 0.1 %><br>
+
+  <%= form.label :verified %>:
+  <%= form.radio_button :true, "true" %>
+  <%= form.label :verified, "It is verified" %>
+  <%= form.radio_button :false, "false" %>
+  <%= form.label :age_adult, "It is not verified" %><br>
+
+  <%= form.label :guest_capacity %>:
+  <%= form.number_field :guest_capacity, in: 1..20, step: 1 %><br><br>
+
+  <%= form.submit 'Create Vacation Home Listing' %>
+<% end %>
