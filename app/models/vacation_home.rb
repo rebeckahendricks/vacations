@@ -1,5 +1,5 @@
 class VacationHome < ApplicationRecord
-  has_many :bookings
+  has_many :bookings, :dependent => :delete_all
 
   def bookings_count
     self.bookings.count

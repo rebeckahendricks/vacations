@@ -41,6 +41,17 @@ RSpec.describe 'Vacation Homes show page' do
           expect(current_path).to eq("/vacation_homes/#{@vacation_home.id}/bookings")
         end
       end
+
+      describe 'I see a link to delete a vacation home' do
+        describe 'when I click the link "Delete Vacation Home"' do
+          it 'deletes the vacation home and all of the bookings and I am redirected to the vacation homes index page where I no longer see the vacation home' do
+            visit "/vacation_homes/#{@vacation_home.id}"
+            click_on "Delete Vacation Home"
+            expect(current_path).to eq("/vacation_homes")
+            expect(page).to_not have_content(@vacation_home.listing_name)
+          end
+        end
+      end
     end
   end
 end

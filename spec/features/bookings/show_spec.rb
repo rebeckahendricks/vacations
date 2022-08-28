@@ -22,6 +22,17 @@ RSpec.describe 'bookings show page' do
           expect(page).to_not have_content(@booking2.checkin)
         end
       end
+
+      describe 'then I see a link to delete the booking' do
+        describe 'when I click the link' do
+          it 'deletes the booking and I am redirected to the booking index page where I no longer see that booking' do
+            visit "/bookings/#{@booking.id}"
+            click_on "Delete Booking"
+            expect(current_path).to eq("/bookings")
+            expect(page).to_not have_content(@booking.guest_firstname)
+          end
+        end
+      end
     end
   end
 end

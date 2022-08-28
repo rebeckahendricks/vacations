@@ -9,6 +9,7 @@
   <div>Guests: <%= booking.guests %></div>
   <div>Verified: <%= booking.verified %></div>
   <a href="/bookings/<%= booking.id %>/edit">Edit</a><br>
+  <%= button_to 'Delete', "/bookings/#{booking.id}", method: :delete %>
 <% end %>
 
 <br><br>
