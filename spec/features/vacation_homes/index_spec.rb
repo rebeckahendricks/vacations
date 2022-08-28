@@ -92,7 +92,7 @@ RSpec.describe 'Vacation Homes index page' do
 
       describe 'Next every vacation home, I see a link to delete that vacation home' do
         describe 'when I click the link' do
-          it 'I am taken to the vacation home index page where I no longer see that parent' do
+          it 'I am taken to the vacation home index page where I no longer see that vacation home' do
             visit '/vacation_homes'
             first(:button, "Delete").click
             expect(current_path).to eq("/vacation_homes")

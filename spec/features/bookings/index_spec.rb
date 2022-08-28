@@ -43,6 +43,18 @@ RSpec.describe 'Bookings index page' do
           end
         end
       end
+
+      describe 'Next every booking, I see a link to delete that booking' do
+        describe 'when I click the link' do
+          it 'I am taken to the bookings index page where I no longer see that booking' do
+            visit '/bookings'
+            first(:button, "Delete").click
+            expect(current_path).to eq("/bookings")
+            expect(page).to_not have_content(@booking.guest_surname)
+            expect(page).to_not have_content(@booking.guest_firstname)
+          end
+        end
+      end
     end
 
     describe 'when I visit any page on the site' do
