@@ -57,6 +57,17 @@ RSpec.describe 'Vacation homes bookings index' do
           expect(@booking4.guest_surname).to appear_before(@booking2.guest_surname)
         end
       end
+
+      describe 'next to every booking, I see a link to edit that bookings info' do
+        describe 'When I click the link' do
+          it 'I am taken to that bookings edit page where I can update its information' do
+            visit "/vacation_homes/#{@vacation_home.id}/bookings"
+            expect(page).to have_link("Edit")
+            first(:link, "Edit").click
+            expect(current_path).to eq("/bookings/#{@booking.id}/edit")
+          end
+        end
+      end
     end
   end
 end

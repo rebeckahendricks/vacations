@@ -32,6 +32,17 @@ RSpec.describe 'Bookings index page' do
           expect(page).to have_content(@booking2.verified)
         end
       end
+
+      describe 'next to every booking, I see a link to edit that bookings info' do
+        describe 'When I click the link' do
+          it 'I am taken to that bookings edit page where I can update its information' do
+            visit '/bookings/'
+            expect(page).to have_link("Edit")
+            first(:link, "Edit").click
+            expect(current_path).to eq("/bookings/#{@booking2.id}/edit")
+          end
+        end
+      end
     end
 
     describe 'when I visit any page on the site' do
