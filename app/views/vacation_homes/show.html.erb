@@ -11,5 +11,6 @@
 <p>Updated At: <%= @vacation_home.updated_at %></p>
 <p>Number of Bookings: <%= @vacation_home.bookings_count %></p><br>
 
+<%= button_to 'Delete Vacation Home', "/vacation_homes/#{@vacation_home.id}", method: :delete %>
 <a href="/vacation_homes/<%= @vacation_home.id %>/edit">Update Vacation Home</a><br>
 <a href="/vacation_homes/<%= @vacation_home.id %>/bookings">View Bookings</a>

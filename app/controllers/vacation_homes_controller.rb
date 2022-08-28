@@ -15,6 +15,12 @@ class VacationHomesController < ApplicationController
     redirect_to '/vacation_homes'
   end
 
+  def destroy
+    VacationHome.destroy(params[:id])
+    # Booking.destroy(params[:vacation_home_id])
+    redirect_to '/vacation_homes'
+  end
+
   def edit
     @vacation_home = VacationHome.find(params[:id])
   end
