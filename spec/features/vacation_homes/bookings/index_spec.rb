@@ -5,6 +5,7 @@ RSpec.describe 'Vacation homes bookings index' do
     @vacation_home = VacationHome.create!(listing_name: "Gorgeous home", location: "San Jose, Costa Rica", rating:4.9, verified:true, guest_capacity:6)
     @booking = @vacation_home.bookings.create!(checkin: "2022-01-21", checkout: "2022-01-24", guest_surname: "Hendricks", guest_firstname: "Rebecka", guests: 4, verified: true)
     @booking2 = @vacation_home.bookings.create!(checkin: "2022-01-25", checkout: "2022-01-29", guest_surname: "Whitehall", guest_firstname: "Corey", guests: 8, verified: true)
+    @booking4 = @vacation_home.bookings.create!(checkin: "2022-12-13", checkout: "2022-12-25", guest_surname: "Ramjattan", guest_firstname: "Krishna", guests: 2, verified: true)
 
     @vacation_home2 = VacationHome.create!(listing_name: "Beautiful getaway", location: "Louisville, KY", rating:5.0, verified:true, guest_capacity:10)
     @booking3 = @vacation_home2.bookings.create!(checkin: "2022-11-01", checkout: "2022-11-11", guest_surname: "Ramjattan", guest_firstname: "Krishna", guests: 2, verified: true)
@@ -37,6 +38,24 @@ RSpec.describe 'Vacation homes bookings index' do
         expect(page).to have_content(@booking3.guest_firstname)
         expect(page).to have_content(@booking3.guests)
         expect(page).to have_content(@booking3.verified)
+      end
+
+      it 'I see a link to sort bookings in alphabetical order' do
+        visit "/vacation_homes/#{@vacation_home.id}/bookings"
+
+        expect(page).to have_link("Sort Bookings")
+      end
+
+      describe 'when I click on the link' do
+        it 'I am taken back to the vacation home bookings and I can see all of the bookings in alphabetical order' do
+          visit "/vacation_homes/#{@vacation_home.id}/bookings"
+
+          click_on "Sort Bookings"
+
+          expect(current_path).to eq("/vacation_homes/#{@vacation_home.id}/bookings")
+          expect(@booking.guest_surname).to appear_before(@booking4.guest_surname)
+          expect(@booking4.guest_surname).to appear_before(@booking2.guest_surname)
+        end
       end
     end
   end

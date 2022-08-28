@@ -20,4 +20,8 @@ RSpec.describe VacationHome do
     expect(@vacation_home.bookings_count).to eq(2)
     expect(@vacation_home2.bookings_count).to eq(1)
   end
+
+  it 'can order vacation homes by the date most recently created' do
+    expect(VacationHome.order_by_creation).to eq([@vacation_home2, @vacation_home])
+  end
 end
