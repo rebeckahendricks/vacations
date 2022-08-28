@@ -1,0 +1,31 @@
+<a href="/vacation_homes">View all Vacation Homes</a>
+<a href="/bookings">View all Bookings</a><br>
+
+<h2>Create New Booking for <%= @vacation_home.listing_name %></h2>
+
+<%= form_with url: "/vacation_homes/#{@vacation_home.id}/bookings", method: :post, local: true do |form| %>
+  <%= form.label :checkin %>:
+  <%= form.date_field :checkin %><br>
+
+  <%= form.label :checkout %>:
+  <%= form.date_field :checkout %><br>
+
+  <%= form.label :guest_surname %>:
+  <%= form.text_field :guest_surname %><br>
+
+  <%= form.label :guest_firstname %>:
+  <%= form.text_field :guest_firstname %><br>
+
+  <%= form.label :guests %>:
+  <%= form.number_field :guests, in: 1..20, step: 1 %><br>
+
+  <%= form.label :verified %>:
+  <%= form.radio_button :verified, "true" %>
+  <%= form.label :verified_true, "Is verified" %>
+  <%= form.radio_button :verified, "false" %>
+  <%= form.label :verified_false, "Is not verified" %><br>
+
+  <%= form.hidden_field :vacation_home_id, value: "#{@vacation_home.id}" %><br><br>
+
+  <%= form.submit 'Create Booking' %>
+<% end %>

@@ -7,4 +7,6 @@
 <p>Guests: <%= @booking.guests %></p>
 <p>Verified: <%= @booking.verified %></p>
 <p>Created At: <%= @booking.created_at %></p>
-<p>Updated At: <%= @booking.updated_at %></p>
+<p>Updated At: <%= @booking.updated_at %></p><br><br>
+
+<a href="/bookings/<%= @booking.id %>/edit">Update Booking</a><br>

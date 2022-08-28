@@ -27,6 +27,6 @@ class VacationHomesController < ApplicationController
 
   private
   def vacation_home_params
-    params.permit(:listing_name, :location, :rating, :verified, :guest_capacity)
+    params.permit(:listing_name, :location, :rating, :verified, :guest_capacity, :updated_at)
   end
 end
