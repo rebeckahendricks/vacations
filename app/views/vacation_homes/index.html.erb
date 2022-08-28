@@ -7,6 +7,7 @@
   <p>Location: <%= home.location%></p>
   <p>Created at: <%= home.created_at%></p>
   <a href="/vacation_homes/<%= home.id %>/edit">Edit</a><br>
+  <%= button_to 'Delete Vacation Home', "/vacation_homes/#{home.id}", method: :delete %>
 <% end %><br>
 
 <!-- <button type="button"> -->
