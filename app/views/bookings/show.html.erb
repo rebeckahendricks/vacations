@@ -9,4 +9,5 @@
 <p>Created At: <%= @booking.created_at %></p>
 <p>Updated At: <%= @booking.updated_at %></p><br><br>
 
+<%= button_to 'Delete Booking', "/bookings/#{@booking.id}", method: :delete %>
 <a href="/bookings/<%= @booking.id %>/edit">Update Booking</a><br>

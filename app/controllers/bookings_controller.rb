@@ -17,6 +17,11 @@ class BookingsController < ApplicationController
     redirect_to "/bookings/#{@booking.id}"
   end
 
+  def destroy
+    Booking.destroy(params[:id])
+    redirect_to '/bookings'
+  end
+  
   private
   def booking_params
     params.permit(:checkin, :checkout, :guest_surname, :guest_firstname, :guests, :verified, :vacation_home_id, :updated_at)
