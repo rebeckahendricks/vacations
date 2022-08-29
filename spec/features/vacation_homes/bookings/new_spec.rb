@@ -10,7 +10,7 @@ RSpec.describe 'Parent Child Creation' do
       it 'I see a link to add a new booking for that vacation home called "Create Booking"' do
         visit "/vacation_homes/#{@vacation_home.id}/bookings"
 
-        expect(page).to have_link("Create Booking")
+        expect(page).to have_button("Create Booking")
       end
     end
 
@@ -37,7 +37,6 @@ RSpec.describe 'Parent Child Creation' do
         click_on 'Create Booking'
 
         expect(current_path).to eq("/vacation_homes/#{@vacation_home.id}/bookings")
-
         expect(page).to have_content('Joe')
       end
     end

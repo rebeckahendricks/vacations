@@ -37,8 +37,8 @@ RSpec.describe 'Bookings index page' do
         describe 'When I click the link' do
           it 'I am taken to that bookings edit page where I can update its information' do
             visit '/bookings/'
-            expect(page).to have_link("Edit")
-            first(:link, "Edit").click
+            expect(page).to have_button("Edit")
+            first(:button, "Edit").click
             expect(current_path).to eq("/bookings/#{@booking2.id}/edit")
           end
         end

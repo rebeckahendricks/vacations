@@ -1,13 +1,13 @@
-<a href="/vacation_homes">View all Vacation Homes</a>
-<a href="/bookings">View all Bookings</a>
+<%= link_to 'View all Bookings', '/bookings' %>
+<%= link_to 'View all Vacation Homes', '/vacation_homes' %>
 
-<h1>Guest Name: <%= @booking.guest_surname%>, <%= @booking.guest_firstname %></h1>
+<h2>Guest Name: <%= @booking.guest_surname%>, <%= @booking.guest_firstname %></h2>
 
 <p>Dates: <%= @booking.checkin %> to <%= @booking.checkout %></p>
 <p>Guests: <%= @booking.guests %></p>
 <p>Verified: <%= @booking.verified %></p>
 <p>Created At: <%= @booking.created_at %></p>
-<p>Updated At: <%= @booking.updated_at %></p><br><br>
+<p>Updated At: <%= @booking.updated_at %></p>
 
+<%= button_to 'Update Booking', "/bookings/#{@booking.id}/edit", method: :get %>
 <%= button_to 'Delete Booking', "/bookings/#{@booking.id}", method: :delete %>
-<a href="/bookings/<%= @booking.id %>/edit">Update Booking</a><br>

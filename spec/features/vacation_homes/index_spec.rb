@@ -68,12 +68,12 @@ RSpec.describe 'Vacation Homes index page' do
         it 'has a link called "New Vacation Home"' do
           visit "/vacation_homes"
 
-          expect(page).to have_link("New Vacation Home")
+          expect(page).to have_button("New Vacation Home")
         end
 
         it 'when I click this link I am taken to "/vacation_homes/new"' do
           visit "/vacation_homes"
-          click_link "New Vacation Home"
+          click_button "New Vacation Home"
 
           expect(current_path).to eq("/vacation_homes/new")
         end
@@ -83,8 +83,8 @@ RSpec.describe 'Vacation Homes index page' do
         describe 'when I click the link' do
           it 'I am taken to that parents edit page where I can update its information' do
             visit "/vacation_homes"
-            expect(page).to have_link("Edit")
-            first(:link, "Edit").click
+            expect(page).to have_button("Edit")
+            first(:button, "Edit").click
             expect(current_path).to eq("/vacation_homes/#{@vacation_home2.id}/edit")
           end
         end

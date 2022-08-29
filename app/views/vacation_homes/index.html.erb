@@ -1,15 +1,14 @@
-<a href="/bookings">View all Bookings</a>
+<%= link_to 'View all Bookings', '/bookings' %>
 
-<h1>Vacation Homes</h1>
+<h1>All Vacation Homes</h1>
 
 <% @vacation_homes.each do |home| %>
-  <h3><a href="/vacation_homes/<%= home.id %>"><%= home.listing_name %></a></h3>
+
+  <h2><a href="/vacation_homes/<%= home.id %>"><%= home.listing_name %></a></h2>
   <p>Location: <%= home.location%></p>
   <p>Created at: <%= home.created_at%></p>
-  <a href="/vacation_homes/<%= home.id %>/edit">Edit</a><br>
-  <%= button_to 'Delete Vacation Home', "/vacation_homes/#{home.id}", method: :delete %>
+  <%= button_to 'Edit', "/vacation_homes/#{home.id}/edit", method: :get %>
+  <%= button_to 'Delete', "/vacation_homes/#{home.id}", method: :delete %>
 <% end %><br>
 
-<!-- <button type="button"> -->
-<a href="/vacation_homes/new">New Vacation Home</a>
-<!-- </button> -->
+<%= button_to 'New Vacation Home', "/vacation_homes/new", method: :get %>
