@@ -1,7 +1,7 @@
-<a href="/vacation_homes">View all Vacation Homes</a>
-<a href="/bookings">View all Bookings</a><br>
+<%= link_to 'View all Bookings', '/bookings' %>
+<%= link_to 'View all Vacation Homes', '/vacation_homes' %>
 
-<h2>Create New Booking for <%= @vacation_home.listing_name %></h2>
+<h1>Create New Booking for <%= @vacation_home.listing_name %></h1>
 
 <%= form_with url: "/vacation_homes/#{@vacation_home.id}/bookings", method: :post, local: true do |form| %>
   <%= form.label :checkin %>:

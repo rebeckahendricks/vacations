@@ -1,5 +1,5 @@
-<a href="/vacation_homes">View all Vacation Homes</a>
-<a href="/bookings">View all Bookings</a>
+<%= link_to 'View all Bookings', '/bookings' %>
+<%= link_to 'View all Vacation Homes', '/vacation_homes' %>
 
 <h1><%= @vacation_home.listing_name %></h1>
 
@@ -12,5 +12,5 @@
 <p>Number of Bookings: <%= @vacation_home.bookings_count %></p><br>
 
 <%= button_to 'Delete Vacation Home', "/vacation_homes/#{@vacation_home.id}", method: :delete %>
-<a href="/vacation_homes/<%= @vacation_home.id %>/edit">Update Vacation Home</a><br>
-<a href="/vacation_homes/<%= @vacation_home.id %>/bookings">View Bookings</a>
+<%= button_to 'Update Vacation Home', "/vacation_homes/#{@vacation_home.id}/edit", method: :get %><br>
+<%= button_to 'View Bookings', "/vacation_homes/#{@vacation_home.id}/bookings", method: :get %>

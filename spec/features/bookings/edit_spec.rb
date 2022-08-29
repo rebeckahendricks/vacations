@@ -10,7 +10,7 @@ RSpec.describe 'Bookings edit feature' do
     it 'has a link to update that booking' do
       visit "/bookings/#{@booking.id}"
 
-      expect(page).to have_link("Update Booking")
+      expect(page).to have_button("Update Booking")
     end
   end
 
@@ -18,7 +18,7 @@ RSpec.describe 'Bookings edit feature' do
     it 'goes to a page where there is a form to edit the booking attributes' do
       visit "/bookings/#{@booking.id}"
 
-      click_link "Update Booking"
+      click_button "Update Booking"
 
       expect(current_path).to eq("/bookings/#{@booking.id}/edit")
       expect(page).to have_selector("input")
