@@ -17,4 +17,8 @@ RSpec.describe Booking, type: :model do
  it 'can sort bookings alphabetically by guest_surname' do
    expect(Booking.sort_by_guest_surname).to eq([@booking, @booking3, @booking2])
  end
+
+ it 'can find all bookings with more than a certain amount of guests(user input)' do
+   expect(Booking.guests_more_than(3)).to eq([@booking, @booking2])
+ end
 end
