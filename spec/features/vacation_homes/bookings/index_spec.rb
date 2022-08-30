@@ -80,6 +80,19 @@ RSpec.describe 'Vacation homes bookings index' do
           end
         end
       end
+
+      describe 'I see a form that allows me to input a number value, hen I input a number value and click the submit button that reads "Only return records with more than `number` of `column_name`"' do
+        it 'Then I am brought back to the current index page with only the records that meet that threshold shown.' do
+          visit "vacation_homes/#{@vacation_home.id}/bookings"
+          fill_in 'Show bookings with guests more than:', with: '3'
+          click_on 'Submit'
+
+          expect(current_path).to eq("/vacation_homes/#{@vacation_home.id}/bookings")
+          expect(page).to have_content(@booking.guest_surname)
+          expect(page).to have_content(@booking2.guest_surname)
+          expect(page).to_not have_content(@booking4.guest_surname)
+        end
+      end
     end
   end
 end

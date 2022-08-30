@@ -13,5 +13,12 @@
   <%= button_to 'Delete', "/bookings/#{booking.id}", method: :delete %>
 <% end %><br>
 
-<%= button_to 'Create Booking', "/vacation_homes/#{@vacation_home.id}/bookings/new", method: :get %>
+<%= button_to 'Create Booking', "/vacation_homes/#{@vacation_home.id}/bookings/new", method: :get %><br>
+
+<%= form_with url: "/vacation_homes/#{@vacation_home.id}/bookings", method: :get, local: true do |form| %>
+  <%= form.label :guests_more_than, "Show bookings with guests more than:" %>
+  <%= form.number_field :guests_more_than, in: 1..20, step:1 %>
+  <%= form.submit 'Submit' %>
+<% end %>
+
 <%= link_to "Sort Bookings", :sort_by_guest_surname => "guest_surname" %>

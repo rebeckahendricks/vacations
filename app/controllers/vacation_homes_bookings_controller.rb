@@ -2,9 +2,11 @@ class VacationHomesBookingsController < ApplicationController
   def index
     @vacation_home = VacationHome.find(params[:id])
     @bookings = if params[:sort_by_guest_surname] == "guest_surname"
-      Booking.verified.sort_by_guest_surname
+      @vacation_home.bookings.sort_by_guest_surname
+    elsif params[:guests_more_than] != nil
+      @vacation_home.bookings.guests_more_than(params[:guests_more_than])
     else
-      Booking.verified
+      @vacation_home.bookings
     end
   end
 
