@@ -26,9 +26,7 @@ RSpec.describe "Vacation Homes edit feature" do
       visit "/vacation_homes/#{@vacation_home.id}"
 
       click_button "Update Vacation Home"
-
       fill_in 'listing_name', with: 'Gorgeous home by the ocean'
-
       click_on "Update Vacation Home"
 
       expect(current_path).to eq("/vacation_homes/#{@vacation_home.id}")

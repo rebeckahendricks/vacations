@@ -7,7 +7,7 @@ class CreateBookings < ActiveRecord::Migration[5.2]
       t.string :guest_firstname
       t.integer :guests
       t.boolean :verified
-      t.reference :vacation_home, foreign_key: true
+      t.references :vacation_home, foreign_key: true
       t.timestamps
     end
   end
