@@ -1,13 +1,13 @@
 require 'rails_helper'
 
-RSpec.describe 'Bookings index page' do
+RSpec.describe 'Bookings Index page' do
   before :each do
     @vacation_home = VacationHome.create!(listing_name: "Gorgeous home", location: "San Jose, Costa Rica", rating:4.9, verified:true, guest_capacity:6)
     @booking = @vacation_home.bookings.create!(checkin: "2022-01-21", checkout: "2022-01-24", guest_surname: "Hendricks", guest_firstname: "Rebecka", guests: 4, verified: false)
     @booking2 = @vacation_home.bookings.create!(checkin: "2022-01-25", checkout: "2022-01-29", guest_surname: "Whitehall", guest_firstname: "Corey", guests: 8, verified: true)
   end
 
-  describe 'as a visitor' do
+  describe 'As a visitor' do
     describe 'when I visit "/bookings"' do
       describe 'I only see records where the boolean column is true' do
         it 'only displays bookings where the user is verified' do
@@ -33,12 +33,15 @@ RSpec.describe 'Bookings index page' do
         end
       end
 
-      describe 'next to every booking, I see a link to edit that bookings info' do
+      describe 'Next to every booking, I see a link to edit that bookings info' do
         describe 'When I click the link' do
           it 'I am taken to that bookings edit page where I can update its information' do
             visit '/bookings/'
+
             expect(page).to have_button("Edit")
+
             first(:button, "Edit").click
+
             expect(current_path).to eq("/bookings/#{@booking2.id}/edit")
           end
         end
@@ -57,34 +60,32 @@ RSpec.describe 'Bookings index page' do
       end
     end
 
-    describe 'when I visit any page on the site' do
-      describe 'I see a link at the top of the page that takes me to the bookings index' do
-        it 'has a link to bookings index on the top of each page' do
-          visit '/'
-          expect(page).to have_link("View all Bookings")
-          click_on "View all Bookings"
-          expect(current_path).to eq('/bookings')
+    describe 'When I visit any page on the site' do
+      it 'I see a link at the top of the page that takes me to the bookings index' do
+        visit '/'
+        expect(page).to have_link("View all Bookings")
+        click_on "View all Bookings"
+        expect(current_path).to eq('/bookings')
 
-          visit '/vacation_homes'
-          expect(page).to have_link("View all Bookings")
-          click_on "View all Bookings"
-          expect(current_path).to eq('/bookings')
+        visit '/vacation_homes'
+        expect(page).to have_link("View all Bookings")
+        click_on "View all Bookings"
+        expect(current_path).to eq('/bookings')
 
-          visit "/vacation_homes/#{@vacation_home.id}"
-          expect(page).to have_link("View all Bookings")
-          click_on "View all Bookings"
-          expect(current_path).to eq('/bookings')
+        visit "/vacation_homes/#{@vacation_home.id}"
+        expect(page).to have_link("View all Bookings")
+        click_on "View all Bookings"
+        expect(current_path).to eq('/bookings')
 
-          visit "/bookings/#{@booking.id}"
-          expect(page).to have_link("View all Bookings")
-          click_on "View all Bookings"
-          expect(current_path).to eq('/bookings')
+        visit "/bookings/#{@booking.id}"
+        expect(page).to have_link("View all Bookings")
+        click_on "View all Bookings"
+        expect(current_path).to eq('/bookings')
 
-          visit "/vacation_homes/#{@vacation_home.id}/bookings"
-          expect(page).to have_link("View all Bookings")
-          click_on "View all Bookings"
-          expect(current_path).to eq('/bookings')
-        end
+        visit "/vacation_homes/#{@vacation_home.id}/bookings"
+        expect(page).to have_link("View all Bookings")
+        click_on "View all Bookings"
+        expect(current_path).to eq('/bookings')
       end
     end
   end

@@ -11,7 +11,7 @@ RSpec.describe 'Vacation homes bookings index' do
     @booking3 = @vacation_home2.bookings.create!(checkin: "2022-11-01", checkout: "2022-11-11", guest_surname: "Ramjattan", guest_firstname: "Krishna", guests: 2, verified: true)
   end
 
-  describe 'as a visitor' do
+  describe 'As a visitor' do
     describe 'when I visit a vacation homes bookings page' do
       it 'I see each booking of that vacation home and each of its attributes' do
         visit "/vacation_homes/#{@vacation_home.id}/bookings"
@@ -58,12 +58,15 @@ RSpec.describe 'Vacation homes bookings index' do
         end
       end
 
-      describe 'next to every booking, I see a link to edit that bookings info' do
+      describe 'Next to every booking, I see a link to edit that bookings info' do
         describe 'When I click the link' do
           it 'I am taken to that bookings edit page where I can update its information' do
             visit "/vacation_homes/#{@vacation_home.id}/bookings"
+
             expect(page).to have_button("Edit")
+
             first(:button, "Edit").click
+
             expect(current_path).to eq("/bookings/#{@booking.id}/edit")
           end
         end
@@ -73,7 +76,9 @@ RSpec.describe 'Vacation homes bookings index' do
         describe 'when I click the link' do
           it 'I am taken to the bookings index page where I no longer see that booking' do
             visit "vacation_homes/#{@vacation_home.id}/bookings"
+
             first(:button, "Delete").click
+
             expect(current_path).to eq("/bookings")
             expect(page).to_not have_content(@booking.guest_surname)
             expect(page).to_not have_content(@booking.guest_firstname)
@@ -84,6 +89,7 @@ RSpec.describe 'Vacation homes bookings index' do
       describe 'I see a form that allows me to input a number value, hen I input a number value and click the submit button that reads "Only return records with more than `number` of `column_name`"' do
         it 'Then I am brought back to the current index page with only the records that meet that threshold shown.' do
           visit "vacation_homes/#{@vacation_home.id}/bookings"
+
           fill_in 'Show bookings with guests more than:', with: '3'
           click_on 'Submit'
 

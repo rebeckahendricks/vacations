@@ -21,7 +21,7 @@ RSpec.describe 'Bookings edit feature' do
       click_button "Update Booking"
 
       expect(current_path).to eq("/bookings/#{@booking.id}/edit")
-      expect(page).to have_selector("input")
+      expect(page).to have_css('input[type="text"]')
     end
   end
 

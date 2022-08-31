@@ -17,6 +17,7 @@ RSpec.describe 'Parent Child Creation' do
     describe 'when I click the link' do
       it 'I am taken to a link where I see a form' do
         visit "/vacation_homes/#{@vacation_home.id}/bookings"
+        
         click_on "Create Booking"
 
         expect(current_path).to eq("/vacation_homes/#{@vacation_home.id}/bookings/new")
